@@ -1,0 +1,44 @@
+@import "../../../App.css";
+
+.nav-item {
+  font-weight: bold;
+  font-size: 80%;
+}
+
+.nav-item.active a {
+  color: var(--link-color) !important;
+}
+
+.nav-item a {
+  text-decoration: none;
+  color: var(--primary-color);
+}
+
+.nav-item a:hover {
+  color: var(--link-color);
+  transition: color 0.3s ease-in-out;
+}
+
+@media (max-width: 600px) {
+  .navbar {
+    margin-left: 25%;
+    margin-right: 25%;
+    width: 80%;
+    font-size: 80%;
+  }
+
+  .nav-background {
+    width: 80%;
+    height: 40px;
+    padding: 0 20px;
+  }
+
+  .nav-list {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .nav-item {
+    font-weight: bold;
+  }
+}

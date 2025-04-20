@@ -1,0 +1,75 @@
+@import "../../App.css";
+
+.homepage-logo-container {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.homepage-container {
+  padding-top: 25px;
+}
+
+.homepage-first-area {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.homepage-first-area-left-side {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.homepage-title,
+.homepage-subtitle {
+  width: 85% !important;
+}
+
+.homepage-first-area-right-side {
+  display: flex;
+  align-items: center;
+}
+
+.homepage-image-container {
+  width: 370px;
+  height: 370px;
+}
+
+.homepage-image-container {
+  overflow: hidden;
+  border-radius: 10%;
+  transform: rotate(3deg);
+}
+
+.homepage-image-wrapper img {
+  width: 100%;
+}
+
+.homepage-socials {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+
+.homepage-social-icon {
+  padding-right: 20px;
+  font-size: 25px;
+  transition: color 0.2s ease-in-out;
+  color: var(--secondary-color);
+}
+
+.homepage-social-icon:hover {
+  color: var(--primary-color);
+}
+
+.homepage-after-title {
+  display: flex;
+}
+
+.homepage-projects {
+  flex-basis: 300px;
+  padding-top: 40px;
+}
