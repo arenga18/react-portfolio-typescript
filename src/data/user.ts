@@ -18,6 +18,12 @@ const INFO = {
       "I am a full-stack web and software engineer with experience in various technologies and frameworks, enabling me to work on both frontend and backend solutions. I enjoy solving challenges and am committed to continuous learning and skill development. My goal is to write clean, high-quality code that adheres to industry best practices. I am excited to embrace new opportunities that will help me grow as a developer.",
   },
 
+  about: {
+    title: "I’m Arenga. Bachelor of Information Systems.",
+    description:
+      "I am a fresh graduate from Mercu Buana University with a degree in Information Systems, focusing on frontend web development. I have strong skills in HTML, CSS, JavaScript, and modern frameworks like ReactJS, NextJS, and TailwindCSS. I also have experience using Laravel to build dynamic and interactive web applications, especially in integrating frontend components with backend systems using the MVC architecture. <br> In various projects, including a tracer study platform and a digital waste management system, I focused on creating responsive, user-friendly interfaces that adapt across devices. I’m familiar with integrating RESTful APIs to enable dynamic content and enhance user interaction. With a keen eye for detail and a strong foundation in frontend principles, I’m eager to grow professionally and contribute to innovative development teams.",
+  },
+
   projects: [
     {
       title: "Waste Management System (Laravel)",

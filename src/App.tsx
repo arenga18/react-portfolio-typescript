@@ -4,6 +4,7 @@ import { Route, Routes } from "react-router-dom";
 import ReactGA from "react-ga4";
 import Homepage from "./page/Homepage";
 import Notfound from "./page/Notfound";
+import About from "./page/About";
 
 // import { TRACKING_ID } from "./data/tracking";
 
@@ -18,6 +19,7 @@ function App() {
     <div className="App">
       <Routes>
         <Route path="/" element={<Homepage />} />
+        <Route path="/about" element={<About />} />
         <Route path="*" element={<Notfound />} />
       </Routes>
     </div>

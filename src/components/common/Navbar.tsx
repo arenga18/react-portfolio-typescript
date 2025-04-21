@@ -15,25 +15,25 @@ export default function Navbar({ active }: { active: string }) {
               </li>
               <li
                 className={active === "about" ? "nav-item active" : "nav-item"}>
-                <Link to="/">About</Link>
+                <Link to="/about">About</Link>
               </li>
               <li
                 className={
                   active === "projects" ? "nav-item active" : "nav-item"
                 }>
-                <Link to="/">Projects</Link>
+                <Link to="/projects">Projects</Link>
               </li>
               <li
                 className={
                   active === "resume" ? "nav-item active" : "nav-item"
                 }>
-                <Link to="/">Resume</Link>
+                <Link to="/resume">Resume</Link>
               </li>
               <li
                 className={
                   active === "contact" ? "nav-item active" : "nav-item"
                 }>
-                <Link to="/">Contact</Link>
+                <Link to="/contact">Contact</Link>
               </li>
             </ul>
           </div>
