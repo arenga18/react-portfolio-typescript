@@ -1,11 +1,5 @@
 import { useState, useRef } from "react";
-import {
-  motion,
-  useScroll,
-  useSpring,
-  useInView,
-  useTransform,
-} from "framer-motion";
+import { motion, useInView } from "framer-motion";
 
 import "./styles/timeline.css";
 
@@ -58,67 +52,28 @@ const timelineEvents = [
   },
 ];
 
-const BulletIcon = ({ progress }: { progress: number }) => {
-  <svg
-    viewBox="0 0 24 24"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-    className="w-6 h-6"
-    style={{ transform: `scale(${progress})` }}>
-    <path
-      d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
-      stroke="currentColor"
-      strokeWidth="2"
-    />
-    <path
-      d="M12 8C12 8 14 10 14 12C14 14 12 16 12 16C12 16 10 14 10 12C10 10 12 8 12 8Z"
-      stroke="currentColor"
-      strokeWidth="2"
-    />
-  </svg>;
-};
-
 export default function Timeline() {
   const [expandedEvent, setExpandedEvent] = useState<number | null>(null);
   const containerRef = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start end", "end start"],
-  });
-
-  const scaleX = useSpring(scrollYProgress, {
-    stiffness: 0,
-    damping: 30,
-    restDelta: 0.001,
-  });
 
   return (
-    <section ref={containerRef} className="py-20 overflow-hidden">
+    <section className="py-14 overflow-hidden">
       <div className="max-w-7xl text-center mx-auto mb-10">
         <motion.div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-foreground sm:text-4xl">
             My Journey
           </h2>
-          <p className="mt-4 text-lg text-muted-foreground">
+          <p className="mt-4 text-md text-muted-foreground">
             The evolution of my experience through the years
           </p>
         </motion.div>
       </div>
-      <div className="relative">
+      <div className="relative" ref={containerRef}>
         {/* Vertical Line */}
         <motion.div
-          className="absolute left-1/2 transform -translate-x-1/2 w-0.5 h-full bg-primary/20"
-          style={{ scaleY: scaleX }}
+          className="absolute left-1/2 transform -translate-x-1/2 w-0.5 h-full bg-gray-300"
+          style={{ scaleY: 0.88 }}
         />
-
-        {/* Bullet */}
-        {/* <motion.div
-          className="relative top-1/2 left-1/2 transform-translate-x-1/2 -translate-y-1/2 z-10 text-primary"
-          style={{ y: useTransform(scrollYProgress, [0, 1], [0, 100]) }}>
-          <BulletIcon
-            progress={useTransform(scrollYProgress, [0, 1], [0.5, 1]) as any}
-          />
-        </motion.div> */}
 
         {timelineEvents.map((event, index) => (
           <TimelineEvent
@@ -174,7 +129,7 @@ export default function Timeline() {
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
           onClick={onToggle}>
-          <div className="p-4 bg-background rounded-lg shadow-sm hover:bg-[#fafafa]">
+          <div className="p-4 bg-background rounded-lg border border-gray-200 shadow-sm hover:bg-[#fafafa]">
             <span className="font-bold text-primary">{event.year}</span>
             <h3 className="text-lg font-semibold mb-1">{event.title}</h3>
             <p className="text-muted-foreground">{event.description}</p>

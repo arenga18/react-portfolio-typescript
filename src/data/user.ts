@@ -10,12 +10,14 @@ const INFO = {
     github: "https://github.com/arenga18",
     linkedin: "https://www.linkedin.com/in/arengapm",
     instagram: "https://instagram.com/arenga_pinnata18",
+    email: "arengapinnatamarzuki@gmail.com",
   },
 
   homepage: {
-    title: "Fullstack Developer",
+    name: "Arenga Pinnata Marzuki",
+    job: "Fullstack Developer",
     description:
-      "I am a full-stack web and software engineer with experience in various technologies and frameworks, enabling me to work on both frontend and backend solutions. I enjoy solving challenges and am committed to continuous learning and skill development. My goal is to write clean, high-quality code that adheres to industry best practices. I am excited to embrace new opportunities that will help me grow as a developer.",
+      "I am a full-stack web and software engineer with experience in various technologies and frameworks, enabling me to work on both frontend and backend solutions.",
   },
 
   about: {

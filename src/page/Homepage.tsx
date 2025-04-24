@@ -29,12 +29,12 @@ export default function Homepage() {
     const handleScroll = () => {
       const scroll = Math.round(window.pageYOffset);
 
-      const newLogoSize = 80 - (scroll * 4) / 10;
+      const newLogoSize = 80 - (scroll * 3) / 10;
 
       if (newLogoSize < oldLogoSize) {
         if (newLogoSize > 40) {
           setLogoSize(newLogoSize);
-          setOldLogoSize(newLogoSize);
+          setOldLogoSize(logoSize);
           setStayLogo(false);
         } else {
           setStayLogo(true);
@@ -46,6 +46,7 @@ export default function Homepage() {
     };
 
     window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, [logoSize, oldLogoSize]);
 
   const logoStyle: React.CSSProperties = {
@@ -54,8 +55,8 @@ export default function Homepage() {
     top: stayLogo ? "3vh" : "auto",
     zIndex: 999,
     border: stayLogo ? "1px solid white" : "none",
-    boxShadow: stayLogo ? "0px 4px 10px rgba(0, 0, 0, 0.25)" : "none",
     borderRadius: stayLogo ? "50%" : "none",
+    boxShadow: stayLogo ? "0px 4px 10px rgba(0, 0, 0, 0.25)" : "none",
   };
 
   return (
@@ -78,10 +79,46 @@ export default function Homepage() {
             <div className="homepage-first-area">
               <div className="homepage-first-area-left-side">
                 <div className="title homepage-title">
-                  {INFO.homepage.title}
+                  <h1>{INFO.homepage.name}</h1>
+                  <h2>{INFO.homepage.job}</h2>
                 </div>
                 <div className="subtitle homepage-subtitle">
                   {INFO.homepage.description}
+                </div>
+                <div className="homepage-socials">
+                  <a
+                    href={INFO.socials.github}
+                    target="_blank"
+                    rel="noreferrer">
+                    <FontAwesomeIcon
+                      icon={faGithub}
+                      className="homepage-social-icon"
+                    />
+                  </a>
+                  <a
+                    href={INFO.socials.linkedin}
+                    target="_blank"
+                    rel="noreferrer">
+                    <FontAwesomeIcon
+                      icon={faLinkedin}
+                      className="homepage-social-icon"
+                    />
+                  </a>
+                  <a
+                    href={INFO.socials.instagram}
+                    target="_blank"
+                    rel="noreferrer">
+                    <FontAwesomeIcon
+                      icon={faInstagram}
+                      className="homepage-social-icon"
+                    />
+                  </a>
+                  <a href={INFO.socials.email} target="_blank" rel="noreferrer">
+                    <FontAwesomeIcon
+                      icon={faMailBulk}
+                      className="homepage-social-icon"
+                    />
+                  </a>
                 </div>
               </div>
               <div className="homepage-first-area-right-side">
@@ -96,36 +133,14 @@ export default function Homepage() {
                 </div>
               </div>
             </div>
-            <div className="homepage-socials">
-              <a href={INFO.socials.github} target="_blank" rel="noreferrer">
-                <FontAwesomeIcon
-                  icon={faGithub}
-                  className="homepage-social-icon"
-                />
-              </a>
-              <a href={INFO.socials.linkedin} target="_blank" rel="noreferrer">
-                <FontAwesomeIcon
-                  icon={faLinkedin}
-                  className="homepage-social-icon"
-                />
-              </a>
-              <a href={INFO.socials.instagram} target="_blank" rel="noreferrer">
-                <FontAwesomeIcon
-                  icon={faInstagram}
-                  className="homepage-social-icon"
-                />
-              </a>
-              <a href={INFO.socials.email} target="_blank" rel="noreferrer">
-                <FontAwesomeIcon
-                  icon={faMailBulk}
-                  className="homepage-social-icon"
-                />
-              </a>
-            </div>
+
             <div className="homepage-projects">
-              <h2 className="text-3xl text-center font-bold text-[var(--primary-color)]">
+              <h2 className="text-4xl text-center font-bold text-[var(--primary-color)]">
                 All Projects
               </h2>
+              <p className="mt-4 text-md text-muted-foreground text-center">
+                Projects I have worked on, showcasing my skills and expertise.
+              </p>
               <AllProjects />
             </div>
             <div className="homepage-journey">
