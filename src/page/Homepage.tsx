@@ -143,7 +143,7 @@ export default function Homepage() {
                     <img
                       src="homepage.png"
                       alt="my image"
-                      className="homepage-image  "
+                      className="homepage-image"
                     />
                   </div>
                 </div>

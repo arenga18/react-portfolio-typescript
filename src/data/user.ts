@@ -3,7 +3,7 @@ const INFO = {
     title: "Portfolio by Arenga",
     name: "Arenga PM",
     email: "arengapinnatamarzuki@gmail.com",
-    logo: "../../public/logo.png",
+    logo: "/logo.png",
   },
 
   socials: {
