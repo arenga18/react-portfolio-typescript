@@ -6,9 +6,9 @@ const Card = ({
   title,
   body,
 }: {
-  icon: string;
+  icon: import("@fortawesome/fontawesome-svg-core").IconProp;
   title: string;
-  body: string;
+  body: React.ReactNode;
 }) => {
   return (
     <div className="card">

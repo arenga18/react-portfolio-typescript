@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import "./App.css";
 import { Route, Routes } from "react-router-dom";
 import ReactGA from "react-ga4";
@@ -8,14 +8,14 @@ import About from "./page/About";
 import Projects from "./page/Projects";
 import Contact from "./page/Contact";
 
-// import { TRACKING_ID } from "./data/tracking";
+import { TRACKING_ID } from "./data/tracking";
 
 function App() {
-  // useEffect(() => {
-  //   if (TRACKING_ID !== "") {
-  //     ReactGA.initialize(TRACKING_ID);
-  //   }
-  // }, []);
+  useEffect(() => {
+    if (TRACKING_ID.id !== "") {
+      ReactGA.initialize(TRACKING_ID.id);
+    }
+  }, []);
 
   return (
     <div className="App">
