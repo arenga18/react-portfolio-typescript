@@ -1,6 +1,6 @@
 import INFO from "../../data/user";
 import Project from "./Project";
-import "./styles/AllProjects.css";
+import "./styles/allProjects.css";
 
 export default function AllProjects() {
   return (
