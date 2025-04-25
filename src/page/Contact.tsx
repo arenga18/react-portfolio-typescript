@@ -6,6 +6,7 @@ import Socials from "../components/common/Socials";
 import Footer from "../components/common/Footer";
 import INFO from "../data/user";
 
+import SEO from "../data/seo";
 import "./styles/contact.css";
 
 const Contact = () => {
@@ -13,12 +14,20 @@ const Contact = () => {
     window.scrollTo(0, 0);
   }, []);
 
+  const currentSEO:
+    | {
+        page: string;
+        description: string;
+        keywords: string[];
+      }
+    | undefined = SEO.find((item) => item.page === "contact");
+
   return (
     <React.Fragment>
       <Helmet>
         <title>{`Contact | ${INFO.main.title}`}</title>
-        {/* <meta name="description" content={currentSEO.description} />
-        <meta name="keywords" content={currentSEO.keywords.join(", ")} /> */}
+        <meta name="description" content={currentSEO?.description} />
+        <meta name="keywords" content={currentSEO?.keywords.join(", ")} />
       </Helmet>
 
       <div className="page-content">
@@ -26,12 +35,12 @@ const Contact = () => {
         <div className="content-wrapper">
           <div className="contact-logo-container">
             <div className="contact-logo">
-              <Logo width={46} />
+              <Logo width={46} link={false} />
             </div>
           </div>
 
           <div className="contact-container">
-            <div className="title contact-title">
+            <div className="title contact-title !text-3xl md:!text-5xl md:mb-6">
               Let's Get in Touch: Ways to Connect with Me
             </div>
 

@@ -4,6 +4,10 @@
   padding-top: 25px;
 }
 
+.title {
+  width: 100% !important;
+}
+
 .projects-logo {
   display: flex;
   position: fixed;
@@ -24,7 +28,7 @@
 
 @media (max-width: 600px) {
   .projects-container {
-    padding-top: 60px;
+    padding-top: 80px;
   }
 
   .projects-project {

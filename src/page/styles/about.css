@@ -115,7 +115,11 @@
   }
 
   .about-container {
-    padding-top: 60px;
+    padding-top: 80px;
+  }
+
+  .about-subtitle {
+    width: 100% !important;
   }
 
   .about-image-container {

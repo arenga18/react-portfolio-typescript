@@ -2,7 +2,7 @@
 
 .nav-item {
   font-weight: bold;
-  font-size: 80%;
+  font-size: 90%;
 }
 
 .nav-item.active a {
@@ -22,15 +22,15 @@
 @media (max-width: 600px) {
   .navbar {
     margin-left: 25%;
-    margin-right: 25%;
-    width: 80%;
+    margin-right: 10%;
+    width: 90%;
     font-size: 80%;
   }
 
   .nav-background {
     width: 80%;
     height: 40px;
-    padding: 0 20px;
+    padding: 0 10px;
   }
 
   .nav-list {
@@ -40,5 +40,6 @@
 
   .nav-item {
     font-weight: bold;
+    font-size: 90%;
   }
 }

@@ -8,7 +8,7 @@ export default function Navbar({ active }: { active: string }) {
       <div className="nav-container m-0 flex justify-center items-center">
         <nav className="navbar flex justify-center items-center fixed top-[3vh] z-50">
           <div className="nav-background flex justify-center items-center w-[380px] h-[40px] bg-white rounded-full shadow-sm">
-            <ul className="nav-list flex justify-evenly items-center w-full h-full my-auto p-1">
+            <ul className="nav-list flex justify-evenly items-center w-full h-full my-auto p-1 md:p-2.5 gap-2">
               <li
                 className={active === "home" ? "nav-item active" : "nav-item"}>
                 <Link to="/">Home</Link>
@@ -27,7 +27,12 @@ export default function Navbar({ active }: { active: string }) {
                 className={
                   active === "resume" ? "nav-item active" : "nav-item"
                 }>
-                <Link to="/resume">Resume</Link>
+                <a
+                  href="/files/Arenga Pinnata Marzuki - Fullstack - CV.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer">
+                  Resume
+                </a>
               </li>
               <li
                 className={

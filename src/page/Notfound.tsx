@@ -1,13 +1,45 @@
-export default function Notfound() {
+import React, { useEffect } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faFaceSadTear } from "@fortawesome/free-solid-svg-icons";
+import NavBar from "../components/common/Navbar";
+import Logo from "../components/common/Logo";
+import INFO from "../data/user";
+
+const Notfound = () => {
+  useEffect(() => {
+    document.title = `404 | ${INFO.main.title}`;
+  }, []);
+
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
-      <h1 className="text-4xl font-bold text-red-500">404 Not Found</h1>
-      <p className="mt-4 text-lg text-gray-600">
-        The page you are looking for does not exist.
-      </p>
-      <button className="mt-6 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">
-        Go Back Home
-      </button>
-    </div>
+    <React.Fragment>
+      <div className="not-found page-content">
+        <NavBar active="" />
+        <div className="content-wrapper">
+          <div className="notfound-logo-container">
+            <div className="projects-logo">
+              <Logo width={46} link={false} />
+            </div>
+          </div>
+          <div className="notfound-container">
+            <div className="notfound-message">
+              <div className="notfound-title">
+                Oops! <FontAwesomeIcon icon={faFaceSadTear} />
+              </div>
+              <div className="not-found-message">
+                We can't seem to find the page you're looking for.
+                <br />
+                The requested URL "{window.location.href}" was not found on this
+                server.
+              </div>
+              <a href="/" className="not-found-link">
+                Go back to the home page
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </React.Fragment>
   );
-}
+};
+
+export default Notfound;

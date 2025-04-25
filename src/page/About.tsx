@@ -6,15 +6,28 @@ import Socials from "../components/common/Socials";
 import Footer from "../components/common/Footer";
 import INFO from "../data/user";
 import "./styles/about.css";
+import SEO from "../data/seo";
 
 export default function About() {
+  const currentSEO:
+    | {
+        page: string;
+        description: string;
+        keywords: string[];
+      }
+    | undefined = SEO.find((item) => item.page === "about");
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
   return (
     <React.Fragment>
-      <Helmet></Helmet>
+      <Helmet>
+        <title>{`About | ${INFO.main.title}`}</title>
+        <meta name="description" content={currentSEO?.description} />
+        <meta name="keywords" content={currentSEO?.keywords.join(", ")} />
+      </Helmet>
 
       <div className="page-content">
         <Navbar active="about" />
@@ -26,10 +39,13 @@ export default function About() {
             <div className="about-container">
               <div className="about-main">
                 <div className="about-right-side">
-                  <div className="title about-title">{INFO.about.title}</div>
+                  <div className="title about-title !text-3xl md:!text-5xl md:mb-6">
+                    {INFO.about.title}
+                  </div>
 
                   <div className="subtitle about-subtitle">
-                    {INFO.about.description}
+                    <p className="mb-3">{INFO.about.description1}</p>
+                    <p>{INFO.about.description2}</p>
                   </div>
                 </div>
 

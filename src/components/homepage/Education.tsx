@@ -4,13 +4,13 @@ import "./styles/education.css";
 
 export default function Education() {
   return (
-    <div className="education flex pb-[40px] w-[400px]">
+    <div className="education  md:flex pb-[40px] w-full md:w-[400px]">
       <Card
         icon={faGraduationCap}
         title="Education"
         body={
           <div className="educations-body mb-2.5">
-            <div className="education flex gap-6 pb-[40px] w-[400px]">
+            <div className="education flex gap-6 pb-[40px] w-full md:w-[400px]">
               <img
                 src="./mercu.png"
                 alt="mercubuana"
@@ -23,7 +23,7 @@ export default function Education() {
               <div className="education-duration">2021 - 2025</div>
             </div>
 
-            <div className="education flex gap-6  pb-[40px] w-[400px]">
+            <div className="education flex gap-6  pb-[40px] w-full md:w-[400px]">
               <img
                 src="./revou.png"
                 alt="revou"

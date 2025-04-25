@@ -2,53 +2,53 @@ import { useState, useRef } from "react";
 import { motion, useInView } from "framer-motion";
 
 import "./styles/timeline.css";
-
 const timelineEvents = [
   {
     year: 2021,
-    title: "First University College",
+    title: "Began University Journey",
     description:
-      "Our journey began with a passion for minimal design and floral artistry.",
+      "The academic journey in Information Systems officially began.",
     details:
-      "Founded by Jane Doe and John Smith, Flowers & Saints started as a small studio in Sydney's Surry Hills, combining their love for minimalist design and botanical beauty.",
+      "Entered Mercubuana University as an Information Systems major, laying the foundation with courses in system analysis, databases, and programming fundamentals.",
   },
   {
     year: 2022,
-    title: "Member of Education Division",
+    title: "Joined the Education Division",
     description:
-      "Showcased our unique blend of digital art and floral arrangements at the Sydney Design Festival.",
+      "Started contributing through campus organizations focused on education.",
     details:
-      "Our exhibition 'Digital Bloom' attracted over 10,000 visitors and received critical acclaim for its innovative approach to merging technology with natural elements.",
+      "Became actively involved in organizing educational events, mentoring fellow students, and supporting academic growth within the student community.",
   },
   {
     year: 2023,
-    title: "Joined Laboratory Assistant",
+    title: "Appointed as a Laboratory Assistant",
     description:
-      "Expanded our reach by bringing our creations to the digital world.",
+      "Took part in assisting practical classes related to systems and technology.",
     details:
-      "In response to global changes, we pivoted to e-commerce, offering our unique designs and virtual floral workshops to a worldwide audience.",
+      "Supported lecturers during hands-on sessions, guided peers in understanding practical course materials, and helped manage lab operations efficiently.",
   },
   {
     year: 2024,
-    title: "Revou Tech Academy",
+    title: "Joined RevoU Tech Academy",
     description:
-      "Partnered with leading lifestyle brands to create exclusive collections.",
+      "Pursued advanced training in both data analytics and software engineering.",
     details:
-      "Our collaborations included limited edition prints with Australian fashion label Zimmermann and a bespoke fragrance line with Aesop.",
+      "Completed an intensive 4-month program focusing on Data Analytics and Software Engineering. Gained hands-on experience in data processing, visualization, and statistical analysis, as well as modern software development practices such as full-stack web development, API integration, and agile collaboration on real-world projects. Delivered a capstone project involving dashboard development using Chart.js and backend technologies.",
   },
   {
     year: 2024,
-    title: "PKM Hibah Mercubuana University",
-    description: "Received the prestigious International Floral Design Award.",
+    title: "Internship under PKM Program",
+    description:
+      "Carried out a university-funded digital waste management project as part of the PKM initiative.",
     details:
-      "Our 'Ethereal Echoes' installation, which combined holographic projections with live flowers, won the gold medal at the Chelsea Flower Show.",
+      "Built a Laravel-based Waste Bank system enabling communities to record and manage waste transactions digitally. Conducted training sessions for community members, collaborated with lecturers to deploy the system in the field, and developed user documentation to ensure successful adoption and usability.",
   },
   {
     year: 2025,
-    title: "Labschool Cirendeu",
-    description: "Opened our first flagship store in the heart of Sydney.",
+    title: "Internship at Labschool Cirendeu",
+    description: "Applied academic knowledge in a professional tech setting.",
     details:
-      "Our Bondi Beach location features an immersive retail experience, blending digital installations with a curated selection of floral arrangements and lifestyle products.",
+      "Designed and developed educational web platforms including a tracer study system and responsive landing pages using Laravel. Enhanced digital services for the institution by improving user experience and system reliability across devices.",
   },
 ];
 
@@ -57,7 +57,7 @@ export default function Timeline() {
   const containerRef = useRef(null);
 
   return (
-    <section className="py-14 overflow-hidden">
+    <section className="py-14">
       <div className="max-w-7xl text-center mx-auto mb-10">
         <motion.div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-foreground sm:text-4xl">
@@ -129,10 +129,14 @@ export default function Timeline() {
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
           onClick={onToggle}>
-          <div className="p-4 bg-background rounded-lg border border-gray-200 shadow-sm hover:bg-[#fafafa]">
-            <span className="font-bold text-primary">{event.year}</span>
-            <h3 className="text-lg font-semibold mb-1">{event.title}</h3>
-            <p className="text-muted-foreground">{event.description}</p>
+          <div className="p-4 bg-background rounded-lg border border-gray-200 shadow-sm hover:bg-[#fafafa] z-40">
+            <span className="font-bold text-[#14b8a6]">{event.year}</span>
+            <h3 className="text-sm md:text-lg font-semibold mb-1">
+              {event.title}
+            </h3>
+            <p className="hidden md:block text-muted-foreground">
+              {event.description}
+            </p>
             <motion.div
               initial={{ height: 0, opacity: 0 }}
               animate={{
@@ -141,7 +145,7 @@ export default function Timeline() {
               }}
               transition={{ duration: 0.3 }}
               className="overflow-hidden">
-              <p className="mt-2 text-sm text-muted-foreground">
+              <p className="hidden md:block mt-2 text-sm text-muted-foreground">
                 {event.details}
               </p>
             </motion.div>

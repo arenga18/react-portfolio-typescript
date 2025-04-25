@@ -15,11 +15,20 @@ import AllProjects from "../components/projects/AllProjects";
 import Timeline from "../components/homepage/Timeline";
 import Education from "../components/homepage/Education";
 import Footer from "../components/common/Footer";
+import SEO from "../data/seo";
 
 export default function Homepage() {
   const [stayLogo, setStayLogo] = useState<boolean>(false);
   const [logoSize, setLogoSize] = useState<number>(80);
   const [oldLogoSize, setOldLogoSize] = useState<number>(80);
+
+  const currentSEO:
+    | {
+        page: string;
+        description: string;
+        keywords: string[];
+      }
+    | undefined = SEO.find((item) => item.page === "homepage");
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -62,11 +71,14 @@ export default function Homepage() {
   return (
     <React.Fragment>
       <Helmet>
-        <title>title</title>
-        <meta name="description" content="" />
-        <meta name="keywords" content="" />
+        <title>{`Homepage | ${INFO.main.title}`}</title>
+        {currentSEO && (
+          <>
+            <meta name="description" content={currentSEO.description} />
+            <meta name="keywords" content={currentSEO.keywords.join(", ")} />
+          </>
+        )}
       </Helmet>
-
       <div className="page-content">
         <Navbar active="home" />
         <div className="content-wrapper">
@@ -79,8 +91,12 @@ export default function Homepage() {
             <div className="homepage-first-area">
               <div className="homepage-first-area-left-side">
                 <div className="title homepage-title">
-                  <h1>{INFO.homepage.name}</h1>
-                  <h2>{INFO.homepage.job}</h2>
+                  <h1 className="text-3xl md:text-5xl mb-2">
+                    {INFO.homepage.name}
+                  </h1>
+                  <h2 className="!text-2xl md:!text-4xl !text-[#14b8a6]">
+                    {INFO.homepage.job}
+                  </h2>
                 </div>
                 <div className="subtitle homepage-subtitle">
                   {INFO.homepage.description}
@@ -123,11 +139,11 @@ export default function Homepage() {
               </div>
               <div className="homepage-first-area-right-side">
                 <div className="homepage-image-container">
-                  <div className="homepage-image-wrapper">
+                  <div className="homepage-image-wrapper !w-[280px] md:w-full">
                     <img
                       src="homepage.png"
                       alt="my image"
-                      className="homepage-image"
+                      className="homepage-image  "
                     />
                   </div>
                 </div>
@@ -135,12 +151,14 @@ export default function Homepage() {
             </div>
 
             <div className="homepage-projects">
-              <h2 className="text-4xl text-center font-bold text-[var(--primary-color)]">
-                All Projects
-              </h2>
-              <p className="mt-4 text-md text-muted-foreground text-center">
-                Projects I have worked on, showcasing my skills and expertise.
-              </p>
+              <div className="homepage-projects-title mb-10">
+                <h2 className="text-4xl text-center font-bold text-[var(--primary-color)]">
+                  All Projects
+                </h2>
+                <p className="mt-4 text-md text-muted-foreground text-center">
+                  Projects I have worked on, showcasing my skills and expertise.
+                </p>
+              </div>
               <AllProjects />
             </div>
             <div className="homepage-journey">

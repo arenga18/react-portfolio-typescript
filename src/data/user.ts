@@ -17,18 +17,20 @@ const INFO = {
     name: "Arenga Pinnata Marzuki",
     job: "Fullstack Developer",
     description:
-      "I am a full-stack web and software engineer with experience in various technologies and frameworks, enabling me to work on both frontend and backend solutions.",
+      "Full-stack web developer with 2+ years of experience crafting scalable, user-centric solutions. Expert in both frontend and backend development, I've successfully helped companies transform ideas into high-performance digital products. Let's collaborate to elevate your tech stack and drive measurable results!",
   },
 
   about: {
-    title: "I’m Arenga. Bachelor of Information Systems.",
-    description:
-      "I am a fresh graduate from Mercu Buana University with a degree in Information Systems, focusing on frontend web development. I have strong skills in HTML, CSS, JavaScript, and modern frameworks like ReactJS, NextJS, and TailwindCSS. I also have experience using Laravel to build dynamic and interactive web applications, especially in integrating frontend components with backend systems using the MVC architecture. <br> In various projects, including a tracer study platform and a digital waste management system, I focused on creating responsive, user-friendly interfaces that adapt across devices. I’m familiar with integrating RESTful APIs to enable dynamic content and enhance user interaction. With a keen eye for detail and a strong foundation in frontend principles, I’m eager to grow professionally and contribute to innovative development teams.",
+    title: "I’m Arenga. Bachelor of Computer Science.",
+    description1:
+      "I am a fresh graduate from Mercu Buana University with a degree in Information Systems, focusing on fullstack web development. I have strong skills in HTML, CSS, JavaScript, and modern frontend tools like ReactJS, NextJS, and TailwindCSS. On the backend side, I work with PHP and Laravel to build dynamic and interactive web applications.",
+    description2:
+      "In my projects, like a tracer study platform and a digital waste management system, I was responsible for both frontend and backend development. I built features such as user dashboards, admin panels, and data tracking systems that help users interact with the platform smoothly.I enjoy solving problems through code, learning new technologies, and working with teams to build useful and meaningful applications. I’m ready to grow as a developer and contribute to great tech projects.",
   },
 
   projects: [
     {
-      title: "Waste Management System (Laravel)",
+      title: "Waste Management System",
       description:
         "Developed a waste management application to support a community-driven waste bank service in Meruya Selatan.",
       logo: [
@@ -85,14 +87,14 @@ const INFO = {
     {
       title: "Consultation System",
       description:
-        " Built a tracer study website using Laravel and Filament, enabling efficient tracking of alumni who have enrolled in state universities.",
+        "Developed a doctor consultation website with real-time booking and chat features using Laravel and Livewire.",
       logo: [
         "https://static-00.iconduck.com/assets.00/laravel-icon-1990x2048-xawylrh0.png",
         "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Tailwind_CSS_Logo.svg/1200px-Tailwind_CSS_Logo.svg.png",
         "https://files.svgcdn.io/devicon/livewire.svg",
       ],
       linkText: "View Project",
-      link: "https://tracer-study.labschoolcirendeu.sch.id/",
+      link: "https://github.com",
     },
   ],
 };
